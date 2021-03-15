@@ -147,7 +147,7 @@ def test_get_pageid_from_gps():
     }
     with requests_mock.Mocker() as m:
         m.get('https://fr.wikipedia.org/w/api.php?action=query&format=json&\
-list=geosearch&gscoord=46.4039137%7C2.0145255&gsradius=10000&gslimit=10',
+list=geosearch&gscoord=46.4039137%7C2.0145255&gsradius=10000&gslimit=5',
               json=json_data)
         w = Wikipedia()
         pageid = w.get_pageid_from_gps({
