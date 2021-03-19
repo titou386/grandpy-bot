@@ -1,0 +1,114 @@
+body
+{
+	color: rgb(189,183,175);
+    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+	background-color: rgb(22,25,26);
+	margin: auto;
+	width: 80%;
+
+}
+
+
+p
+{
+    font-size: 1em;
+    padding: 10px;
+}
+h1
+{
+    font-size: 3em;
+    padding: 10px;
+}
+img
+{
+	padding: 10px;
+}
+.center
+{
+ 	
+  	  	
+  	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center
+}
+.bot
+{
+	border-radius: 15px 15px 0px 15px;
+	background-color: rgb(44,143,51);
+	padding: 10px;
+	width: 60%;
+	
+}
+.user
+{
+	border-radius: 15px 15px 15px 0px;
+	background-color: rgb(8,97,183);
+	padding: 10px;
+	width: 60%;
+
+}
+.align-right
+{
+	display: flex;
+	justify-content: flex-end;
+}
+
+*:focus {
+    outline: none;
+}
+.button
+{
+	color: rgb(73,73,73);
+	background-color: rgb(22,25,26);
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px black;
+	padding: 10px;
+	margin: 10px;
+}
+.button:hover
+{
+	color: rgb(189,183,175);
+	background-color: rgb(8,97,183);
+	transition: .2s;
+	transition-timing-function: linear;
+	
+}
+
+.text-area-input
+{
+	color: rgb(73,73,73);
+	
+	background-color: rgb(22,25,26);
+	border: none;
+	border-bottom: 2px solid rgb(73,73,73);
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+	
+
+.text-area-input:hover
+{
+	color: rgb(189,183,175);
+	border-bottom: 2px solid rgb(8,97,183);
+	transition: .2s;
+	transition-timing-function: linear;
+}
+
+#author
+{
+	font-size: 0.9em;
+
+}
+footer .logo
+{
+  opacity:0.5;
+}
+footer .logo:hover
+{
+  opacity:1;
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>GrandPy Bot</title>
+{% endblock %}
+
+{% block body %}
+<section>
+	<div class=align-right>
+		<p class="bot">
+				Salut, je suis GrandPy ...<br>Comment puis-je t'aider ?
+		</p>
+	</div>
+	<div class=align-left>
+		<p class="user">
+				Où se trouve la tour eiffel ?
+		</p>
+	</div>
+	<form id="user-request-form">
+		<input class="text-area-input" type="text" name="userRequest" placeholder="Où se trouve Paris ?">
+		<input class="button" type="submit" value="Envoyer">
+	</form>
+</section>
+{% endblock %}
