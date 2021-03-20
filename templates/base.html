@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css" />
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+      <link rel="stylesheet" href="../static/style.css" />
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     {% block head %} {% endblock %}
-</head>
-<body>
-	<header class="center">
-		<img src="../static/img/grandpy.png" alt="Grand-py bot logo" />
-		<div id="grandpy_title">
-			<h1>GrandPy Bot</h1>
-			<p>GrandPy, le papy qui ne fait pas que de vous donnez un lieu ...</p>
-		</div>
-	</header>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-auto col-auto">
+          <img src="../static/img/grandpy.png" alt="Grand-py bot logo" />
+        </div>
+        <div class="col-sm-auto col-auto align-self-center">
+          <h1>GrandPy Bot</h1>
+          <p class="d-none d-sm-block">GrandPy, le papy qui ne fait pas que de vous donnez un lieu ...</p>
+        </div>
+      </div>
+    </header>
 	{% block body %} {% endblock %}
-	<footer class="center">
-		<p id="author">Yves DORNIER</p>
-		<div class="logo">
-			<a href="https://github.com/titou386/grandpy-bot">
-				<img src="../static/img/small-white-github.png" alt="GitHub logo" />
-			</a>
-		</div>
-		<div class="logo">
-			<a href="www.linkedin.com/in/yves-dornier">
-				<img src="../static/img/small-linkedin-white.png" alt="LinkedIn logo" />
-			</a>
-		</div>	
-	</footer>
-    
-</body>
+	<footer class="container">
+      <div class="row justify-content-center">
+        <p class="col col-sm-auto text-nowrap align-self-center">Yves DORNIER</p>
+        <div class="col col-sm-auto">
+          <a href="https://github.com/titou386/grandpy-bot">
+            <img class="logo" src="../static/img/small-white-github.png" alt="GitHub logo" />
+          </a>
+        </div>
+        <div class="col col-sm-auto">
+          <a href="www.linkedin.com/in/yves-dornier">
+            <img class="logo" src="../static/img/small-linkedin-white.png" alt="LinkedIn logo" />
+          </a>
+        </div>
+      </div>  
+    </footer>   
+  </body>
 </html>
