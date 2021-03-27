@@ -6,36 +6,22 @@
 
 {% block body %}
 <section class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-end">
-          <div class="bot btn btn-primary">
-            Salut, je suis GrandPy ...<br>Comment puis-je t'aider ?
-          </div>
+  <div class="chat-box">
+    <div class="row">
+      <div class="col d-flex justify-content-end">
+        <div class="bot btn btn-primary">
+          Salut, je suis GrandPy ...<br>Comment puis-je t'aider ?
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="user btn btn-success">
-            Où se trouve la tour eiffel ?
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col d-flex justify-content-end">
-          <div class="bot btn btn-primary">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form id="container user-request-form">
-        <div class="row">
-        <input class="col form-control custom-input-text" type="text" name="userRequest" placeholder="Où se trouve la poste ?" />
-        </div>
-        <div class="row">
-        <button class="col-auto custom-button btn btn-primary" type="submit">Envoyer</button>
-        </div>
-      </form>
-    </section>
+    </div>
+  </div>
+  <form id="container user-request-form">
+    <div class="row">
+    <input class="col form-control custom-input-text" name="userRequest" type="text" name="userRequest" placeholder="Où se trouve la poste ?" />
+    </div>
+    <div class="row">
+    <button class="col-auto custom-button btn btn-primary" type="submit">Envoyer</button>
+    </div>
+  </form>
+</section>
 {% endblock %}
