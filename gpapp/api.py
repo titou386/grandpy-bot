@@ -4,7 +4,7 @@ import json
 import logging
 import random
 import re
-from constants import (GEOCODE_API_KEY, GOOGLE_GEOCODE_API, WIKIPEDIA_API,
+from constants import (GEOCODING_API_KEY, GEOCODING_API_URL, WIKIPEDIA_API_URL,
                        RADIUS)
 
 
@@ -13,7 +13,7 @@ class Geocode:
 
     def __init__(self, **kwargs):
         """Geocode constructor."""
-        self.key = kwargs.get("key", GEOCODE_API_KEY)
+        self.key = kwargs.get("key", GEOCODING_API_KEY)
 
     def get_location(self, place):
         """Find an address and GPS coordinates.
@@ -32,7 +32,7 @@ class Geocode:
             'key': self.key
         }
 
-        data = json_requester(GOOGLE_GEOCODE_API, payload)
+        data = json_requester(GEOCODING_API_URL, payload)
 
         try:
             return {
@@ -40,8 +40,9 @@ class Geocode:
                 'lat': data['results'][0]["geometry"]["location"]["lat"],
                 'lng': data['results'][0]["geometry"]["location"]["lng"]
             }
-        except(KeyError, TypeError) as e:
+        except(KeyError, TypeError, IndexError) as e:
             logging.error('api.py:get_location:{}'.format(e))
+            logging.error(data)
             return
 
 
@@ -68,12 +69,13 @@ class Wikipedia:
             'gsradius': RADIUS,
             'gslimit': 5
         }
-        data = json_requester(WIKIPEDIA_API, payload)
+        data = json_requester(WIKIPEDIA_API_URL, payload)
         try:
             page = random.sample(data['query']['geosearch'], 1)
             return page[0]['pageid']
         except (KeyError, IndexError, TypeError) as e:
             logging.error('api.py:get_pageid_from_location:{}'.format(e))
+            logging.error(data)
             return
 
     def get_intro_from_pageid(self, pageid):
@@ -97,7 +99,7 @@ class Wikipedia:
             'exlimit': 1,
             'explaintext': 1
         }
-        data = json_requester(WIKIPEDIA_API, payload)
+        data = json_requester(WIKIPEDIA_API_URL, payload)
         try:
             title = data['query']['pages'][0]['title']
             intro = re.findall('^.*?\\.', data['query']
@@ -105,6 +107,7 @@ class Wikipedia:
             return {'title': title, 'intro': intro}
         except (KeyError, IndexError, TypeError) as e:
             logging.error('api.py:get_intro_from_pageid:{}'.format(e))
+            logging.error(data)
             return
 
 

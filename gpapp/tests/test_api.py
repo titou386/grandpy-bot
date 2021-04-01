@@ -1,6 +1,6 @@
 """Test_api.py."""
-from app.api import Geocode
-from app.api import Wikipedia
+from gpapp.api import Geocode
+from gpapp.api import Wikipedia
 import requests_mock
 
 

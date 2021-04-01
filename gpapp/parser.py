@@ -1,4 +1,3 @@
-
 """Parser.py."""
 import re
 
@@ -10,7 +9,7 @@ class Parser:
         """Remove the punctuation.
 
         Parameter:
-            msg(str) Character string to be processed.
+            msg(str) String to be processed.
 
         Return:
             (str)
@@ -21,7 +20,7 @@ class Parser:
         """Remove non-essential items.
 
         Parameter:
-            word_list(lst) List of string.
+            word_list(lst) List of strings.
 
         Return:
             (lst) List of string cleaned.
@@ -32,7 +31,7 @@ class Parser:
         """Try to find a location in a query.
 
         Parameter:
-            msg(str): Character string to be processed.
+            msg(str): String to be processed.
 
         Return:
             (lst) List of words referring to a place.

@@ -25,9 +25,10 @@ Download the repository:
 
 ## Usage
 
-Write your Google maps API key in base.html
+Configure your environment and execute main.py:
 
-Execute main.py in purbeurre folder:
-
-    $ export GEOCODE_API_KEY='YOUR_GEOCODE_API_KEY'
+    $ export GEOCODING_API_KEY='YOUR_GEOCODE_API_KEY'
+    $ export MAPS_API_KEY='YOUR_GEOCODE_API_KEY'
+    $ export FLASK_ENV=development
+    $ cd grandpy-bot
     $ python3 main.py

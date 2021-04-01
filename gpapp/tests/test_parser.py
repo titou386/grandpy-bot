@@ -1,5 +1,5 @@
 """Test_parser.py."""
-from app.parser import Parser
+from gpapp.parser import Parser
 import pytest
 
 

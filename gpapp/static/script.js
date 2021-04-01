@@ -83,11 +83,11 @@ C'est bien sûr !!! c'est ${data["intro"]}<br>Voilà, désires-tu autre chose ?
         else {
           $(".bot:last").append("Je ne connais pas encore ce coin.");
         }
-        
       }
       else {
         $(".bot:last").empty().append("Je n'ai pas compris ta question.");
       }
+      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
     })
     $(".chat-box").append(botBox);
     $(".bot:last").append(spinner);    
