@@ -20,7 +20,7 @@ $(function (){
 
   const htmlRegex = /(<([^>]+)>)/ig
 
-  const user_box = `
+  const userBox = `
   <div class="row">
     <div class="col">
       <div class="user btn btn-success">
@@ -29,7 +29,7 @@ $(function (){
   </div>
   `;
 
-  const bot_box = `
+  const botBox = `
   <div class="row">
     <div class="col d-flex justify-content-end">
       <div class="bot btn btn-primary">
@@ -44,7 +44,7 @@ $(function (){
   </div>
   `;
 
-  function bot_map(){
+  function botMap(){
     return `
 <div class="row">
     <div class="col d-flex justify-content-end">
@@ -58,26 +58,26 @@ $(function (){
   $( "form" ).on('submit', function(event) {
     event.preventDefault();
 
-    let input_text = $("input:text").val();
+    let inputText = $("input:text").val();
     //Display the request
-    $(".chat-box").append(user_box);
-    $(".user:last").append(input_text.replace(htmlRegex, ""))
+    $(".chat-box").append(userBox);
+    $(".user:last").append(inputText.replace(htmlRegex, ""))
 
     $.post("/search", { query: $('input:text').val()}, function(data){
       if (data){
         // Display the address
         $(".bot:last").empty().append(`Je pense que ça se trouve au ${data["address"]}`);
 
-        // Diplay the map
-        $(".chat-box").append(bot_map());
+        // Display the map
+        $(".chat-box").append(botMap());
         initMap(data["lat"], data["lng"]);
 
         // Display a story
         if(data["title"] && data["intro"]){
-          $(".chat-box").append(bot_box);
+          $(".chat-box").append(botBox);
           $(".bot:last").append(`
 Ce lieu me dit quelque chose ... eh ... ${data["title"]}<br>
-C'est bien sûr !!! c'est ${data["intro"]}<br>Voilà. 
+C'est bien sûr !!! c'est ${data["intro"]}<br>Voilà, désires-tu autre chose ? 
 `);
         }
         else {
@@ -89,7 +89,7 @@ C'est bien sûr !!! c'est ${data["intro"]}<br>Voilà.
         $(".bot:last").empty().append("Je n'ai pas compris ta question.");
       }
     })
-    $(".chat-box").append(bot_box);
+    $(".chat-box").append(botBox);
     $(".bot:last").append(spinner);    
   });
 });

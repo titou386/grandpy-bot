@@ -37,7 +37,6 @@ body
 .custom-button:hover
 {
     color: white;
-    background-color: $primary-color;
     transition: .2s;
     transition-timing-function: linear;
     
